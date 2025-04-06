@@ -22,7 +22,7 @@ export default function Sidebar() {
               to="/"
               className="text-xl font-bold whitespace-nowrap text-amber-600"
             >
-              TOTAL SURVEY
+              TS
             </Link>
           )}
 

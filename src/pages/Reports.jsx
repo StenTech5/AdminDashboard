@@ -17,17 +17,17 @@ export default function Reports() {
   };
 
   return (
-    <div className="p-6 space-y-6 max-w-7xl mx-auto">
+    <div className="p-6 space-y-6 max-w-7xl mx-auto overflow-x-hidden">
       {/* Title */}
       <h1 className="text-4xl font-semibold text-gray-900">Reports</h1>
 
       {/* Filter Section */}
       <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-4">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 w-full sm:w-auto">
           <label htmlFor="category-filter" className="text-lg font-medium text-gray-700">Filter by Category:</label>
           <select
             id="category-filter"
-            className="p-3 border rounded-lg shadow-md text-sm text-gray-700 focus:ring-2 focus:ring-blue-900 focus:outline-none"
+            className="p-3 border rounded-lg shadow-md text-sm text-gray-700 focus:ring-2 focus:ring-blue-900 focus:outline-none w-full sm:w-auto"
             value={filterCategory}
             onChange={handleFilterChange}
           >

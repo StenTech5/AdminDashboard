@@ -25,7 +25,7 @@ export default function Header() {
             transition={{ duration: 0.5 }}
             onClick={handleLogoClick}
           >
-            TOTAL SURVEY
+            TS
           </motion.span>
         </Link>
       )}
