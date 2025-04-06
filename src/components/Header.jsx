@@ -1,13 +1,35 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { useSidebar } from '../context/SidebarContext';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const { sidebarOpen } = useSidebar();
+
+  const handleLogoClick = () => {
+    window.location.href = '/';
+  };
+
   return (
     <motion.div
       className="flex justify-between items-center mb-6 shadow p-4 bg-white rounded-xl"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
     >
+      {/* Show text logo only when sidebar is collapsed */}
+      {!sidebarOpen && (
+        <Link to="/" className="text-xl font-bold text-orange-500">
+          <motion.span
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            onClick={handleLogoClick}
+          >
+            TOTAL SURVEY
+          </motion.span>
+        </Link>
+      )}
+
       {/* Title */}
       <motion.h1
         className="text-xl font-bold hidden lg:block"
@@ -42,7 +64,7 @@ export default function Header() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          whileHover={{ scale: 1.1 }} // Slight zoom on hover
+          whileHover={{ scale: 1.1 }}
         />
       </motion.div>
     </motion.div>

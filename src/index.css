@@ -6,3 +6,8 @@
 *{
     font-family: Be Vietnam Pro;
 }
+
+body {
+    overflow-x: hidden;
+  }
+  
